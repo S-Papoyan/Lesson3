@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
 
-        int[] array = {15, 0, 25, 65, 88, 7, 9, 71, 91};
-
+        int[] array = {15, 0, 25, 65, 88, 7, 9, 71, 91, 56};
         System.out.println(secondMax1(array));
+
     }
 
     private static int secondMax(int[] array) {
@@ -29,21 +29,25 @@ public class Main {
         return secondMax;
     }
 
+    // int[] array = {15, 0, 25, 65, 88, 7, 9, 71, 91, 56};
     private static int secondMax1(int[] array) {
-        int max = 0;
-        int tmp = 0;
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
+        int max = array[0];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > max) {
                 max = array[i];
             }
-
         }
-        for (int i = 0; i < array.length - 1; i++) {
-            if ((max - array[i]) < (max - array[i + 1])) {
-                tmp = array[i];
-            } else tmp = array[i + 1];
-
+        int secondMax = array[0];
+        for (int i = 1; i < array.length - 1; i++) {
+            if (max - array[i] == 0 || max - array[i + 1] == 0) {
+                continue;
+            }
+            if (max - array[i] < max - array[i + 1]) {
+                secondMax = array[i];
+            }
         }
-        return tmp;
+        return secondMax;
     }
 }
+
+
