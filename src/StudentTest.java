@@ -13,7 +13,7 @@ public class StudentTest {
         boolean isActiveMenu = true;
 
         while (isActiveMenu) {
-            System.out.println("------------Menu---------");
+            System.out.println("----------Menu---------");
             System.out.println("1. Create Student");
             System.out.println("2. Print all Student");
             System.out.println("3. Print all male Student");
