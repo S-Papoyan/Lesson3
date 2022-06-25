@@ -4,29 +4,35 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
+import java.util.Scanner;
 
 public class StudentTest {
     public static void main(String[] args) throws IOException {
 
-        String url = "C:\\Users\\Student\\Desktop\\Student.txt";
-        Student[] read = read(url);
-        write(read);
-    }
-    public static Student[] read(String path) throws IOException {
-        String [] s = Files.readAllLines(Paths.get(path)).toArray(new String[0]);
-        Student[] students = new Student[s.length];
-        for (int i = 0; i < s.length; i++) {
-            String[] split = s[i].split(",");
-            Student student = new Student(split[0],Integer.parseInt(split[1]));
-            students[i] = student;
-        }
-        return students;
-    }
+        Scanner s = new Scanner(System.in);
+        boolean isActiveMenu = true;
 
-    public static void write(Student[] students) throws IOException {
-        for (int i = 0; i < students.length; i++) {
-            Files.write(Paths.get("C:\\Users\\Student\\Desktop\\" + students[i].getName()+".txt"),
-                    students[i].toString().getBytes());
+        while (isActiveMenu) {
+            System.out.println("------------Menu---------");
+            System.out.println("1. Create Student");
+            System.out.println("2. Print all Student");
+            System.out.println("3. Print all male Student");
+            System.out.println("4. Exit");
+
+            int menuNumber = s.nextInt();
+            switch (menuNumber) {
+                case 1:
+                    System.out.println("1. Create Student");
+                    break;
+                case 2:
+                    System.out.println("2. Print all Student");
+                    break;
+                case 3:
+                    System.out.println("3. Print all male Student");
+                    break;
+                case 4:
+                    isActiveMenu = false;
+            }
         }
     }
 }
@@ -35,6 +41,47 @@ public class StudentTest {
 
 
 
+//
+//        String url = "C:\\Users\\Student\\Desktop\\Student.txt";
+//        Student[] read = read(url);
+//        write(read);
+//    }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//    public static Student[] read(String path) throws IOException {
+//        String [] s = Files.readAllLines(Paths.get(path)).toArray(new String[0]);
+//        Student[] students = new Student[s.length];
+//        for (int i = 0; i < s.length; i++) {
+//            String[] split = s[i].split(",");
+//            Student student = new Student(split[0],Integer.parseInt(split[1]));
+//            students[i] = student;
+//        }
+//        return students;
+//    }
+//
+//    public static void write(Student[] students) throws IOException {
+//        for (int i = 0; i < students.length; i++) {
+//            Files.write(Paths.get("C:\\Users\\Student\\Desktop\\" + students[i].getName()+".txt"),
+//                    students[i].toString().getBytes());
+//        }
+//    }
+//}
+//
+//
+//
+//
+//
 
 
 
