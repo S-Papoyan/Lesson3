@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        int[] array = {15, 0, 25, 65, 88, 7, 9, 71, 91, 56};
+        int[] array = {15, 0, 25, 65, 88, 7, 9, 71, 91, 56,105,200};
         System.out.println(secondMax1(array));
 
     }
@@ -38,7 +38,7 @@ public class Main {
             }
         }
         int secondMax = array[0];
-        for (int i = 1; i < array.length - 1; i++) {
+        for (int i = 1; i <= array.length - 1; i++) {
             if (max - array[i] == 0 || max - array[i + 1] == 0) {
                 continue;
             }
